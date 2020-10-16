@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ng-prerender": {
+      "hosting": {
+        "front": [
+          "ng-prerender"
+        ]
+      }
+    }
+  }
+}
