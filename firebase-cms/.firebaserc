@@ -4,6 +4,9 @@
       "hosting": {
         "front": [
           "ng-prerender"
+        ],
+        "manage": [
+          "ng-prerender-manage"
         ]
       }
     }
