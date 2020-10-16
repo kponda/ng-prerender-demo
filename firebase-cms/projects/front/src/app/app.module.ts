@@ -20,7 +20,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     NotFoundPageComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AppRoutingModule
