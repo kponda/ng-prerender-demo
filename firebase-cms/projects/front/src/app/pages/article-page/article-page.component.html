@@ -1,0 +1,10 @@
+<div *ngIf="article$ | async as article">
+  <div>
+    <a routerLink="/">Home</a> &lt; <a [routerLink]="['/', article.category.code ]">{{ article.category?.name }}</a>
+  </div>
+
+  <h1>{{ article.title }}</h1>
+
+  <div [innerHTML]="article.content"></div>
+
+</div>

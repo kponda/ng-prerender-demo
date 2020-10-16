@@ -1,0 +1,5 @@
+<h1>DEMO</h1>
+
+<a *ngFor="let category of categories$ | async" [routerLink]="[ category.code ]">
+  {{ category.name }}
+</a>

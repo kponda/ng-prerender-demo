@@ -1,0 +1,10 @@
+<div *ngIf="category$ | async as category">
+  <div>
+    <a routerLink="/">Home</a>
+  </div>
+  {{ category.name }}
+
+  <div *ngFor="let article of articles$ | async; index as i" [routerLink]="['/', category.code, article.docId]">
+    {{ i }}: {{ article.title }}
+  </div>
+</div>

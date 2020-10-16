@@ -1,0 +1,20 @@
+<label>
+  タイトル:
+  <input type="text" [formControl]="title">
+</label>
+
+<label>
+  記事:
+  <textarea [formControl]="content"></textarea>
+</label>
+
+<label>
+  カテゴリー:
+  <select [formControl]="categoryId">
+    <option value=''>選択してください</option>
+    <option *ngFor="let category of categories$ | async" [value]="category.docId">{{ category.name }}</option>
+  </select>
+
+</label>
+
+<button (click)="saveArticle()" [disabled]="saving">保存</button>
