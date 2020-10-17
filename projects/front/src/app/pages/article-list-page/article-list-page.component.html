@@ -2,9 +2,11 @@
   <div>
     <a routerLink="/">Home</a>
   </div>
-  {{ category.name }}
+  <h3>カテゴリ {{ category.name }} 記事一覧</h3>
 
-  <div *ngFor="let article of articles$ | async; index as i" [routerLink]="['/', category.code, article.docId]">
-    {{ i }}: {{ article.title }}
-  </div>
+  <ul>
+  <li *ngFor="let article of articles$ | async; index as i" >
+    <a [routerLink]="['/', category.code, article.docId]">{{ article.title }}</a>
+  </li>
+  </ul>
 </div>

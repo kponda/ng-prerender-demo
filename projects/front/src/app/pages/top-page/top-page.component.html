@@ -1,5 +1,6 @@
-<h1>DEMO</h1>
-
-<a *ngFor="let category of categories$ | async" [routerLink]="[ category.code ]">
-  {{ category.name }}
-</a>
+<h2>記事カテゴリ</h2>
+<ul>
+<li *ngFor="let category of categories$ | async" [routerLink]="[category.code]">
+  <a [routerLink]="[category.code]">{{ category.name }}</a>
+</li>
+</ul>
