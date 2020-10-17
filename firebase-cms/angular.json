@@ -169,9 +169,7 @@
           "options": {
             "browserTarget": "front:build:production",
             "serverTarget": "front:server:production",
-            "routes": [
-              "/"
-            ]
+            "routesFile": "./pre-render-routes.txt"
           },
           "configurations": {
             "production": {}

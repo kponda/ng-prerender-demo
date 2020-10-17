@@ -1,0 +1,12 @@
+steps:
+  - name: node
+    entrypoint: npm
+    args: ['install']
+  - name: node
+    entrypoint: npm
+    args: ['run', 'prerender:gen-routes']
+  - name: node
+    entrypoint: npm
+    args: ['run', 'prerender']
+  - name: gcr.io/ng-prerender/firebase
+    args: ['deploy', '--project=ng-prerender', '--only=hosting:front']
