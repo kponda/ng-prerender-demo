@@ -11,7 +11,9 @@ import { CategoryEditComponent } from './category-edit/category-edit.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireFunctionsModule, REGION } from '@angular/fire/functions';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DeployButtonComponent } from './deploy-button/deploy-button.component';
 
 
 @NgModule({
@@ -21,16 +23,20 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     ArticleEditComponent,
     CategoriesComponent,
-    CategoryEditComponent
+    CategoryEditComponent,
+    DeployButtonComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireFunctionsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: REGION, useValue: 'asia-northeast1' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

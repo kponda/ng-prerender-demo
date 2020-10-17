@@ -21,7 +21,14 @@ export class ArticlesComponent implements OnInit {
     this.categoryFilter$ = new BehaviorSubject(null);
 
     this.categories$ = db.collection<Category>('categories').get().pipe(
-      map(categories => categories.docs.map(category => ({ docId: category.id, name: category.data().name })))
+      map(categories => categories.docs.map(category => {
+        const data = category.data();
+        return {
+          docId: category.id,
+          name: data.name,
+          code: data.code
+        };
+      }))
     );
 
     this.articles$ = combineLatest(
